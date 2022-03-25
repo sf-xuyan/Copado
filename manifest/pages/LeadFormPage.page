@@ -1,0 +1,20 @@
+<apex:page standardController="Lead" showHeader="false" tabstyle="Lead">
+    <apex:form id="leadform">
+        <apex:pageBlock title="Lead Form" >
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Personal Info" columns="2">
+                <apex:inputField value="{!lead.LastName}" label="Name"/>
+                <apex:inputField value="{!lead.Company}"/>
+                <apex:inputField value="{!lead.email}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Additional Info" columns="2">
+                <apex:inputField value="{!lead.Qualified__c}"/>
+                <apex:inputField value="{!lead.Description}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
